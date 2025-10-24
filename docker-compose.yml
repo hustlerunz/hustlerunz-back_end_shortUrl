@@ -1,0 +1,24 @@
+
+version: '3.1'
+
+services:
+
+  yourls:
+    image: yourls
+    restart: always
+    ports:
+      - 7000:80
+    environment:
+      YOURLS_DB_HOST: 203.159.241.240
+      YOURLS_DB_USER: surl_admin
+      YOURLS_DB_PASS: P@ssw0rd@surl
+      YOURLS_DB_NAME: short_url
+      YOURLS_SITE: https://shorturl.moe.go.th
+      YOURLS_USER: surl_admin
+      YOURLS_PASS: P@ssw0rd@surl
+    volumes:
+      - /home/dev01/dev/short_url/data:/var/www/html
+
+#volumes:
+#  yourls_data:
+#    external: true
